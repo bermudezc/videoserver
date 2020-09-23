@@ -1,0 +1,47 @@
+{{>nav}}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Alta de Expediente</h5>
+                    <form class="form-signin" method="POST" action="/modifyexpediente">
+                        <div class="form-label-group">
+                            <h1>{{error}}</h1>
+                        </div>                        
+
+                        <input type="hidden" name="id" value="{{dato.id}}">
+                        <div class="form-label-group">
+                            <input type="text" name="expediente" id="expediente" class="form-control" placeholder="Expediente" value="{{dato.expediente}}"
+                                required autofocus>
+                            <label for="expediente">Expediente</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="text" name="caratula" id="caratula" class="form-control" placeholder="Caratula" value="{{dato.caratula}}">                                
+                            <label for="caratula">Caratula</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="text" name="nota" id="nota" class="form-control" placeholder="Nota" value="{{dato.nota}}" >
+                            <label for="nota">Nota</label>
+                        </div>
+
+                       
+
+                       <div class="d-flex justify-content-center "> 
+                     
+                            <button class="btn btn-lg btn-primary  text-uppercase" type="submit">{{boton}} </button>
+                     
+
+                        <a href="/mantenimiento" class="btn btn-lg btn-danger ml-4 text-uppercase" type="button" >Cancelar</a>
+                        </div>
+
+
+                        <hr class="my-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

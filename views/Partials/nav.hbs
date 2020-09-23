@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
+  <a class="navbar-brand" href="#">Servidor</a>
+  
+<ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link active" href="/">Inicio </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/video">Videos </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/Mantenimiento">Mantenimiento </a>
+      </li>
+</ul>
+
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-fw fa-user"></i> {{user}}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Mis Datos</a>
+        {{#if rol}} <a class="dropdown-item" href="/users/admin">Administrar usuarios</a>{{/if}}
+        <a class="dropdown-item" href="/users/destroy">Cerrar Sesion</a>
+      </div>
+    </li>
+  </ul>
+</nav>

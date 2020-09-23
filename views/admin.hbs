@@ -1,0 +1,46 @@
+{{>nav}}
+
+
+
+<div class="container">
+  <div class="row mt-4">
+    <h4>Usuarios:</h4>
+    <a class="btn btn-success mb-2 ml-auto" href="/users/nuevo"><i class="fa fa-fw fa-user-plus "></i></a>
+  </div>
+
+  <table class="table table-sm table-hover tableBodyScroll">
+    <thead class="thead-dark">
+      <tr>
+        <th style="width: 25px;">Id</th>
+        <th style="width: 140px;">Nombre</th>
+        <th style="width: 160px;">Usuario</th>
+        <th style="width: 160px;">Pass</th>
+        <th style="width: 100px;">Email</th>
+        <th style="width: 100px;">Rol</th>
+        <th style="width: 100px;">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each rows}}
+      <tr>
+        <th style="width: 20px;">{{id}} </th>
+        <td style="width: 120px;">{{nombre}} </td>
+        <td style="width: 120px;">{{user}}</td>
+        <td style="width: 120px;">{{pass}}</td>
+        <td style="width: 80px;">{{email}}</td>
+        <td style="width: 80px;">{{rol}}</td>
+        <td style="width: 80px;">
+          <a href="/users/modify?id={{id}}"><i class="fa fa-fw fa-edit"></i></a>
+          <a href="/users/delete?id={{id}}"
+            onclick="if (confirm('Borra el Usuario seleccionado?')){return true;}else{event.stopPropagation(); event.preventDefault();};"
+            title="Link Title"><i class="fa fa-fw fa-remove "></i></a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+
+               
+
+</div>

@@ -1,0 +1,131 @@
+{{>nav}}
+
+
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col col-lg-7 ml-3">
+            <!--   https://www.html5rocks.com/en/tutorials/video/basics/
+                                    border: 5px solid blue;     /!-->
+            <video id="myvideo" controls muted="muted" autoplay style="     height: 499px;        width: 703px;    ">
+                <source src="http://10.173.97.14:3000/videoserver?video=video1" type="video/mp4">
+            </video>
+        </div>
+        <div class="col col-lg-4">
+
+            <div class="card bg-info w-100">
+                <div class="card-body text-center">
+                    <p class="card-text">Some text inside the sixth card</p>
+
+                     
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row ml-3">
+        <div class="col col-lg-8">
+            <h6>Videos:</h6>
+            <table class="table table-sm table-striped table-hover tableBodyScroll">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Video</th>
+                        <th>Comentario</th>
+                        <th>Path</th>
+                        <th>Cargar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each videos}}
+                    <tr>
+                        <td>{{id}} </td>
+                        <td>{{video}} </td>
+                        <td>{{comentario}} </td>
+                        <td>{{path}} </td>
+                        <td> <a class="btn btn-sm btn-success  " onclick=" cargar2('{{path}}') " style="font-size:7px "> <i
+                                    class="fa  fa-play  "  ></i> </a> </td>
+                    </tr>
+                    {{/each}}
+
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="col col-lg-4 ">
+
+            <h6>Tags:</h6>
+            <table class="table table-sm table-hover tableBodyScroll" style="background: rgb(148, 170, 209);">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" style="width: 20px;">#</th>
+                        <th scope="col" style="width: 80px;">Descripcion</th>
+                        <th scope="col" style="width: 20px;">tiempo</th>
+                        <th scope="col" style="width: 20px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each tags}}
+                    <tr>
+                        <th scope="row" style="width: 20px;">{{id}}</th>
+                        <td style="width: 100px;">{{desc}}</td>
+                        <td style="width: 20px;">{{tiempo}}</td>
+                        <td  style="width: 20px;"> <a class="btn btn-sm btn-success" onclick=" ir2({{tiempo}})" style="font-size:7px "> <i
+                                    class="fa fa-fw fa-play "></i> </a> </td>
+                    </tr>
+                    {{/each}}
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!--  FUNCIONES /!-->
+
+<script>
+    video = document.getElementById('myvideo');
+    function ir() {
+
+        valor = document.getElementById('numero').value;
+        console.log(valor)
+        mivideo = document.getElementById('myvideo').currentTime = valor;
+    }
+
+    function ir2(valor) {
+
+        console.log(valor)
+        mivideo = document.getElementById('myvideo').currentTime = valor;
+    }
+
+    function cargar() {
+        valor = document.getElementById('path').value;
+        var source = video.getElementsByTagName('source');
+        dato = 'http://10.173.97.14:3000/videoserver?video=' + valor;
+
+        console.log(dato);
+        video.setAttribute("src", dato);
+        video.load();
+    }
+
+    function cargar2(valor) {
+
+        //valor = document.getElementById('path').value;
+        var source = video.getElementsByTagName('source');
+        dato = 'http://10.173.97.14:3000/videoserver?video=' + valor;
+
+        console.log(dato);
+        video.setAttribute("src", dato);
+        video.load();
+    }
+
+</script>

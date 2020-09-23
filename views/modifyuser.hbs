@@ -1,0 +1,50 @@
+{{>nav}}
+<div class="container">
+    
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Modificar Usuario</h5>
+                    <form class="form-signin" method="POST" action="/users/modify">
+                     <input type="hidden" id="id" name="id" value="{{rows.id}}">
+                        <div class="form-label-group">
+                            <h1>{{error}}</h1>
+                        </div>                        
+
+                        <div class="form-label-group">
+                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" value="{{rows.nombre}}"
+                                required autofocus>
+                            <label for="nombre">Nombre</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="text" name="user" id="user" class="form-control" placeholder="Usuario" value="{{rows.user}}">                                
+                            <label for="user">Usuario</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="Password" value="{{rows.pass}}"                                required>
+                            <label for="inputPassword">Password</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{rows.email}}">                                
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="dropdown" name="rol" id="rol" class="form-control" placeholder="Rol" value="{{rows.rol}}">                                
+                            <label for="rol">Rol</label>
+                        </div>
+                       <div class="d-flex justify-content-center "> 
+                        <button class="btn btn-lg btn-primary  text-uppercase" type="submit">Guardar </button>
+                        <a href="/users/admin" class="btn btn-lg btn-danger ml-4 text-uppercase" type="button" >Cancelar</a>
+                        </div>
+                        <hr class="my-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
